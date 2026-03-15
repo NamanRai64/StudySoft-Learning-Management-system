@@ -17,7 +17,9 @@ function Progress({
       className={cn("flex flex-wrap gap-3", className)}
       {...props}
     >
-      {children}
+      <div className="flex w-full items-center justify-between">
+        {children}
+      </div>
       <ProgressTrack>
         <ProgressIndicator />
       </ProgressTrack>
@@ -61,7 +63,7 @@ function ProgressLabel({ className, ...props }: ProgressPrimitive.Label.Props) {
   )
 }
 
-function ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {
+function ProgressValue({ className, children, ...props }: ProgressPrimitive.Value.Props) {
   return (
     <ProgressPrimitive.Value
       className={cn(
@@ -70,7 +72,9 @@ function ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {
       )}
       data-slot="progress-value"
       {...props}
-    />
+    >
+      {children}
+    </ProgressPrimitive.Value>
   )
 }
 

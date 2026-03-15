@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { BookOpen, Calendar, Home, MessageSquare, Settings, ChevronLeft, ChevronRight, PanelLeftClose, PanelLeftOpen } from "lucide-react"
+import { BookOpen, Calendar, Home, MessageSquare, Clock, ChevronLeft, ChevronRight, PanelLeftClose, PanelLeftOpen } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Progress } from "@/components/ui/progress"
 import { useSidebar } from "@/components/contexts/SidebarContext"
@@ -12,8 +12,8 @@ const navItems = [
   { name: "Dashboard", href: "/", icon: Home },
   { name: "Courses", href: "/courses", icon: BookOpen },
   { name: "Calendar", href: "/calendar", icon: Calendar },
+  { name: "Recents", href: "/recents", icon: Clock },
   { name: "Messages", href: "/messages", icon: MessageSquare },
-  { name: "Settings", href: "/settings", icon: Settings },
 ]
 
 export function Sidebar() {
@@ -78,26 +78,17 @@ export function Sidebar() {
           })}
         </nav>
 
-        <div className="p-4 border-t">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={toggleSidebar}
-            suppressHydrationWarning={true}
-            className={cn(
-              "w-full flex items-center gap-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all",
-              isCollapsed ? "justify-center" : "justify-start px-2"
-            )}
-          >
-            {isCollapsed ? <PanelLeftOpen className="h-5 w-5" /> : (
-              <>
-                <PanelLeftClose className="h-5 w-5" />
-                <span className="text-xs font-bold uppercase tracking-wider">Collapse Sidebar</span>
-              </>
-            )}
-          </Button>
-        </div>
       </div>
+
+      <Button
+        variant="secondary"
+        size="icon-xs"
+        onClick={toggleSidebar}
+        suppressHydrationWarning={true}
+        className="absolute -right-3 top-20 z-50 rounded-full border shadow-md bg-white dark:bg-card hover:bg-primary hover:text-white transition-all duration-300"
+      >
+        {isCollapsed ? <ChevronRight className="h-3 w-3" /> : <ChevronLeft className="h-3 w-3" />}
+      </Button>
 
       {!isCollapsed && (
         <div className="p-6 border-t bg-muted/20 animate-in fade-in duration-300">

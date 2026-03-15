@@ -113,13 +113,13 @@ export default function CalendarPage() {
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {courseProgress.map((course) => (
-                <Card key={course.title} className="p-4 rounded-lg border group hover:border-primary transition-colors">
-                  <p className="text-xs font-bold text-muted-foreground mb-1 line-clamp-1">{course.title}</p>
-                  <Progress value={course.progress} className="h-1.5 mb-2">
-                    <ProgressLabel className="text-[10px] font-black uppercase text-[#a435f0]">Completion</ProgressLabel>
-                    <ProgressValue className="text-[10px] font-black">{course.progress}%</ProgressValue>
-                  </Progress>
-                </Card>
+                <div key={course.title} className="p-4 rounded-lg border group hover:border-primary transition-colors">
+                  <div className="flex justify-between items-center mb-1">
+                    <p className="text-xs font-bold text-muted-foreground line-clamp-1">{course.title}</p>
+                    <span className="text-[10px] font-black text-[#a435f0]">{course.progress}%</span>
+                  </div>
+                  <Progress value={course.progress} className="h-1.5" />
+                </div>
               ))}
             </div>
           </section>
@@ -174,16 +174,16 @@ export default function CalendarPage() {
           </section>
 
           {/* Quick Stats Section */}
-          <Card className="p-6 bg-[#1c1d1f] text-white rounded-lg border-none">
-            <h3 className="text-sm font-black uppercase tracking-widest text-[#a435f0] mb-4">Quick Stats</h3>
+          <Card className="p-6 bg-blue-600 dark:bg-blue-900/40 text-white rounded-lg border-none">
+            <h3 className="text-sm font-black uppercase tracking-widest text-blue-100 mb-4">Quick Stats</h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
                 <p className="text-2xl font-black">12.5h</p>
-                <p className="text-[10px] uppercase font-bold text-muted-foreground">This Week</p>
+                <p className="text-[10px] uppercase font-bold text-blue-100/70">This Week</p>
               </div>
               <div className="space-y-1">
                 <p className="text-2xl font-black">84%</p>
-                <p className="text-[10px] uppercase font-bold text-muted-foreground">Test Avg</p>
+                <p className="text-[10px] uppercase font-bold text-blue-100/70">Test Avg</p>
               </div>
             </div>
           </Card>
