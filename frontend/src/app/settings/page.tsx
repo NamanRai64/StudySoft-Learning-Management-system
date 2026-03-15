@@ -15,13 +15,13 @@ export const metadata = {
 export default function SettingsPage() {
   return (
     <FadeIn className="max-w-[1000px] mx-auto py-8 px-4">
-      <div className="mb-10 text-left">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-2">Account Settings</h1>
-        <p className="text-muted-foreground">Manage your public profile and private security settings.</p>
+      <div className="mb-16 text-left">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground mb-4">Account Settings</h1>
+        <p className="text-muted-foreground text-lg">Manage your public profile and private security settings.</p>
       </div>
 
-      <Tabs defaultValue="profile" className="flex flex-col md:flex-row gap-8 lg:gap-16">
-        <TabsList className="flex md:flex-col h-auto bg-transparent border-none p-0 gap-1 md:w-64 shrink-0 overflow-x-auto md:overflow-visible no-scrollbar rounded-lg">
+      <Tabs defaultValue="profile" orientation="vertical" className="gap-8 lg:gap-16">
+        <TabsList className="md:flex-col h-fit bg-transparent border-none p-0 gap-1 md:w-64 shrink-0 overflow-x-auto md:overflow-visible no-scrollbar rounded-lg">
           <TabsTrigger 
             value="profile" 
             className="w-full justify-start gap-3 px-4 py-3 rounded-md border-l-[3px] border-transparent data-active:border-primary data-active:bg-muted/50 data-active:text-primary font-bold text-sm transition-all"
