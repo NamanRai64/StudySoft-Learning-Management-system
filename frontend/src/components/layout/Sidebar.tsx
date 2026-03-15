@@ -18,10 +18,10 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 flex-col border-r bg-white dark:bg-[#1c1d1f] md:flex shadow-sm">
+    <aside className="hidden h-full flex-col border-r bg-white dark:bg-card md:flex shadow-sm">
       <div className="flex h-[72px] items-center border-b px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary text-primary-foreground transform rotate-12 group hover:rotate-0 transition-transform">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground transform rotate-12 group hover:rotate-0 transition-transform">
             <BookOpen className="h-6 w-6" />
           </div>
           <div className="flex flex-col -gap-1">

@@ -6,9 +6,9 @@ import { Bell, Search, CloudOff } from "lucide-react"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 flex h-[72px] w-full items-center justify-between border-b bg-white dark:bg-[#1c1d1f] px-8 shadow-sm">
+    <header className="sticky top-0 z-40 flex h-[72px] w-full items-center justify-between border-b bg-white dark:bg-background px-8 shadow-sm">
       <div className="md:hidden flex items-center gap-2">
-        <div className="h-8 w-8 bg-primary rounded-sm" />
+        <div className="h-8 w-8 bg-primary rounded-md" />
         <span className="text-lg font-black tracking-tight uppercase">Study<span className="text-primary">Soft</span></span>
       </div>
       
@@ -40,7 +40,7 @@ export function Header() {
           <span className="uppercase tracking-wider">Cloud Sync Active</span>
         </div>
         <ThemeToggle />
-        <Button variant="ghost" size="icon" suppressHydrationWarning={true} className="relative h-12 w-12 hover:bg-muted/50 rounded-none">
+        <Button variant="ghost" size="icon" suppressHydrationWarning={true} className="relative h-12 w-12 hover:bg-muted/50 rounded-lg">
           <Bell className="h-5 w-5" />
           <span className="absolute right-3 top-3 flex h-2 w-2 rounded-full bg-primary border-2 border-white dark:border-[#1c1d1f]"></span>
         </Button>
