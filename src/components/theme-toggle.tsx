@@ -17,6 +17,7 @@ export function ThemeToggle() {
 
   return (
     <DropdownMenu>
+      {/* @ts-expect-error React 19 typing generic conflict with Radix UI */}
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
