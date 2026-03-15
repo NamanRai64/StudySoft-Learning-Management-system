@@ -49,12 +49,12 @@ export default function CourseDetailPage() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-4rem)] -m-6 overflow-hidden bg-white dark:bg-[#1c1d1f]">
+    <div className="flex flex-col h-[calc(100vh-4rem)] -m-6 overflow-hidden bg-background">
       {/* Learning Header */}
-      <header className="h-[56px] bg-[#2d2f31] text-white flex items-center justify-between px-4 shrink-0 border-b border-white/10 z-10">
+      <header className="h-[56px] bg-card text-foreground flex items-center justify-between px-4 shrink-0 border-b z-10">
         <div className="flex items-center gap-4">
           <Link href="/courses">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 rounded-none h-[56px] w-[56px] border-r border-white/10">
+            <Button variant="ghost" size="icon" className="hover:bg-muted rounded-lg h-10 w-10">
               <ChevronLeft className="h-6 w-6" />
             </Button>
           </Link>
